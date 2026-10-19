@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+  <title>AuraBreak // Liquid Glass Brick Breaker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Ambient Liquid Mesh Background -->
+  <div class="blob-wrapper">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <main class="liquid-card">
+    <!-- Screen 1: Start Menu -->
+    <section id="screen-menu" class="screen active">
+      <div class="badge">Liquid Edition</div>
+      <h1 class="logo-text">AURA<span>BREAK</span></h1>
+      <p class="subtitle">Experience hyper-smooth glass physics and generative spatial synth audio.</p>
+      
+      <div class="menu-actions">
+        <button id="btn-play" class="btn btn-primary">Launch Game</button>
+        <button id="btn-how" class="btn btn-ghost">Instructions</button>
+      </div>
+
+      <div class="instructions-panel hidden" id="instructions-box">
+        <ul>
+          <li><strong>PC:</strong> Move mouse or use Left/Right arrows</li>
+          <li><strong>Mobile:</strong> Drag your finger directly on the glass stage</li>
+          <li><strong>Sound:</strong> Built-in web synth audio triggers automatically on interaction</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Screen 2: Game Board -->
+    <section id="screen-game" class="screen">
+      <header class="hud-bar">
+        <div class="hud-pill">
+          <span class="hud-label">Score</span>
+          <span class="hud-num" id="ui-score">0</span>
+        </div>
+        <div class="hud-pill">
+          <span class="hud-label">Stage</span>
+          <span class="hud-num" id="ui-stage">1</span>
+        </div>
+        <div class="hud-pill">
+          <span class="hud-label">Vitals</span>
+          <div class="hearts-row" id="ui-lives">
+            <span class="heart"></span>
+            <span class="heart"></span>
+            <span class="heart"></span>
+          </div>
+        </div>
+      </header>
+
+      <div class="stage-container" id="stage-box">
+        <canvas id="gameCanvas" width="480" height="620"></canvas>
+      </div>
+
+      <footer class="game-footer">
+        <button id="btn-quit" class="btn-micro">Abort</button>
+        <button id="btn-sound-toggle" class="btn-micro">Audio: ON</button>
+      </footer>
+    </section>
+
+    <!-- Screen 3: Game Over -->
+    <section id="screen-gameover" class="screen">
+      <div class="badge badge-danger">Connection Severed</div>
+      <h2 class="title-state">Game Over</h2>
+      <div class="stats-glass">
+        <div class="stat-row">
+          <span>Final Score</span>
+          <strong id="final-score">0</strong>
+        </div>
+        <div class="stat-row">
+          <span>Stage Reached</span>
+          <strong id="final-stage">1</strong>
+        </div>
+      </div>
+      <div class="menu-actions">
+        <button id="btn-retry" class="btn btn-primary">Try Again</button>
+        <button id="btn-home-over" class="btn btn-ghost">Main Menu</button>
+      </div>
+    </section>
+
+    <!-- Screen 4: Victory / Stage Clear -->
+    <section id="screen-victory" class="screen">
+      <div class="badge badge-success">Prism Cleared</div>
+      <h2 class="title-state">Stage Complete!</h2>
+      <p class="subtitle">Prepare for increased velocity in the next spectrum layer.</p>
+      <div class="menu-actions">
+        <button id="btn-next-stage" class="btn btn-primary">Next Stage</button>
+        <button id="btn-home-vic" class="btn btn-ghost">Main Menu</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
