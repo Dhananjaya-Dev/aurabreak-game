@@ -47,3 +47,6 @@ A modern, aesthetic reimagining of the classic arcade Brick Breaker game. Built 
 1. Clone the repository:
    ```bash
    git clone [https://github.com/Dhananjaya-Dev/aurabreak-game.git](https://github.com/Dhananjaya-Dev/aurabreak-game.git)
+
+   Learning GitHub Achievements 🚀
+   
